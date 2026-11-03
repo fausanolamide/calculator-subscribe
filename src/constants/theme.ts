@@ -1,65 +1,54 @@
-/**
- * Below are the colors that are used in the app. The colors are defined in the light and dark mode.
- * There are many other ways to style your app. For example, [Nativewind](https://www.nativewind.dev/), [Tamagui](https://tamagui.dev/), [unistyles](https://unistyl.es/), etc.
- */
-
-import '@/global.css';
-
 import { Platform } from 'react-native';
 
-export const Colors = {
-  light: {
-    text: '#000000',
-    background: '#ffffff',
-    backgroundElement: '#F0F0F3',
-    backgroundSelected: '#E0E1E6',
-    textSecondary: '#60646C',
-  },
-  dark: {
-    text: '#ffffff',
-    background: '#000000',
-    backgroundElement: '#212225',
-    backgroundSelected: '#2E3135',
-    textSecondary: '#B0B4BA',
-  },
+export const CalculatorColors = {
+  background: '#000000',
+  displayBackground: '#000000',
+  displayText: '#FFFFFF',
+  expressionText: '#8E8E93',
+  lockedResultText: '#F59E0B',
+  
+  // Buttons
+  numberButton: '#2C2C2E',
+  numberButtonPressed: '#48484A',
+  numberText: '#FFFFFF',
+
+  functionButton: '#505054',
+  functionButtonPressed: '#707074',
+  functionText: '#FFFFFF',
+
+  operatorButton: '#FF9F0A',
+  operatorButtonPressed: '#CC7F08',
+  operatorActiveBackground: '#FFFFFF',
+  operatorActiveText: '#FF9F0A',
+  operatorText: '#FFFFFF',
+
+  // Pro Paywall UI
+  proCardBackground: '#16161A',
+  proCardBorder: '#2E2E36',
+  proGold: '#FBBF24',
+  proGoldLight: '#FEF08A',
+  proGoldDark: '#B45309',
+  proAccentGradientStart: '#FF9F0A',
+  proAccentGradientEnd: '#F43F5E',
+  successGreen: '#10B981',
+  dangerRed: '#EF4444',
+  overlayBackground: 'rgba(0, 0, 0, 0.82)',
+  sheetHandle: '#3F3F46',
 } as const;
-
-export type ThemeColor = keyof typeof Colors.light & keyof typeof Colors.dark;
-
-export const Fonts = Platform.select({
-  ios: {
-    /** iOS `UIFontDescriptorSystemDesignDefault` */
-    sans: 'system-ui',
-    /** iOS `UIFontDescriptorSystemDesignSerif` */
-    serif: 'ui-serif',
-    /** iOS `UIFontDescriptorSystemDesignRounded` */
-    rounded: 'ui-rounded',
-    /** iOS `UIFontDescriptorSystemDesignMonospaced` */
-    mono: 'ui-monospace',
-  },
-  default: {
-    sans: 'normal',
-    serif: 'serif',
-    rounded: 'normal',
-    mono: 'monospace',
-  },
-  web: {
-    sans: 'var(--font-display)',
-    serif: 'var(--font-serif)',
-    rounded: 'var(--font-rounded)',
-    mono: 'var(--font-mono)',
-  },
-});
 
 export const Spacing = {
-  half: 2,
-  one: 4,
-  two: 8,
-  three: 16,
-  four: 24,
-  five: 32,
-  six: 64,
+  xs: 4,
+  sm: 8,
+  md: 12,
+  lg: 16,
+  xl: 24,
+  xxl: 32,
 } as const;
 
-export const BottomTabInset = Platform.select({ ios: 50, android: 80 }) ?? 0;
-export const MaxContentWidth = 800;
+export const Typography = {
+  fontFamily: Platform.select({
+    ios: 'System',
+    android: 'sans-serif',
+    default: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+  }),
+};
