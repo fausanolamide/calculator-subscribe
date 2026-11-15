@@ -316,6 +316,8 @@ export default function CalculatorScreen() {
               style={styles.expressionText}>
               {calcState.expressionHistory || ' '}
             </Text>
+
+            {/* Main Result / Input Display */}
             {calcState.isLocked ? (
               <Pressable
                 onPress={() => setShowPaywall(true)}
@@ -341,7 +343,9 @@ export default function CalculatorScreen() {
             )}
           </View>
 
+          {/* Keypad Grid */}
           <View style={[styles.keypadContainer, { width: contentWidth, gap }]}>
+            {/* Row 1 */}
             <View style={[styles.keypadRow, { gap }]}>
               <CalculatorButton
                 label={isClearAll ? 'AC' : 'C'}
